@@ -1,0 +1,55 @@
+#1
+public class AAbcd {
+
+	public static void main(String args[]) {
+		Object o = "hello";
+		System.out.println("class name is: " + o.getClass().getName());    /// java.lang.String
+		AAbcd a=new AAbcd() ;
+		System.out.println("class name is: " + a.getClass().getName());    /// java.lang.String
+	}
+}
+
+#2
+public class AAbcd {
+
+	static int i = 0;
+	public static void main(String args[])
+	{
+	
+		AAbcd.printNumber(i);
+		
+	}
+	
+	
+	public static int printNumber(int x)
+    {
+  
+        i = i + 2;
+        System.out.println(i);
+        return i + printNumber(i + 2);
+    }
+	
+	
+}
+
+
+
+
+#3
+public class AAbcd {
+
+	public static void main(String[] args) throws Exception {  
+		   
+	int arrSize = 15;    
+    try {  
+        long[] memAlloc = null;    
+        for (int loop = 0; loop < Integer.MAX_VALUE; loop++) {    
+            memAlloc = new long[arrSize];
+            arrSize *= arrSize * 2;    
+        }  
+    } catch (OutOfMemoryError outofMemory) {  
+        System.out.println("Catching out of memory error");  
+        throw outofMemory;  
+    }
+	}
+} 
